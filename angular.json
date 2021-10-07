@@ -31,7 +31,7 @@
             "scripts": [],
             "allowedCommonJsDependencies": [
               "hammerjs"
-           ]
+            ]
           },
           "configurations": {
             "production": {
@@ -125,6 +125,10 @@
               "devServerTarget": "TT-Draw:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {}
         }
       }
     }
