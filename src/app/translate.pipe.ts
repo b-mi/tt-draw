@@ -19,6 +19,7 @@ export class TranslatePipe implements PipeTransform {
     this.dct.theme = ['Dark theme', 'Tmavá téma'];
     this.dct.fullScreen = ['Full screen', 'Na celú obrazovku'];
     this.dct.source = ['Source', 'Zdrojáky'];
+    this.dct.movePlayer  = ['Move player', 'Presuň hráča'];
     this.dct.deletePlayer  = ['Delete player', 'Zmazať hráča'];
     this.dct.editPlayer  = ['Edit player', 'Editovať hráča'];
     this.dct.selectPlayers  = ['Select players', 'Vybrať hráčov'];

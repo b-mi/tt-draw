@@ -117,4 +117,13 @@ export class PlayersComponent implements OnInit {
       const rtn = result;
     });
   }
+
+  moveTo(fromIdx, toTable: number) {
+    const toIdx = toTable === 99 ? this.names.length - 1 : (toTable - 1 ) * 2;
+    const item = this.names[fromIdx];
+    this.names.splice(fromIdx, 1);
+    this.names.splice(toIdx, 0, item);
+    this.setTblCount(this.tableCount);
+    this.save();
+  }
 }

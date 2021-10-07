@@ -1,7 +1,7 @@
 <mat-toolbar color="primary">
     <div fxFlex="20">
         <button color="accent" mat-mini-fab [routerLink]="[ '/' ]" matTooltip="{{'matches' | translate}}">
-            <mat-icon>safety_divider</mat-icon>
+            <mat-icon>sports_tennis</mat-icon>
         </button>
     </div>
 
@@ -13,19 +13,19 @@
     </div>
     <div fxFlex="20">
         <button mat-mini-fab (click)="setTblCount(4)" [color]="tableCount===4 ? 'accent': 'default'"
-        matTooltip="{{'tablesCount' | translate}}">
+            matTooltip="{{'tablesCount' | translate}}">
             <mat-icon>filter_4</mat-icon>
         </button>
     </div>
     <div fxFlex="20">
         <button mat-mini-fab (click)="setTblCount(5)" [color]="tableCount===5 ? 'accent': 'default'"
-        matTooltip="{{'tablesCount' | translate}}">
+            matTooltip="{{'tablesCount' | translate}}">
             <mat-icon>filter_5</mat-icon>
         </button>
     </div>
     <div fxFlex="20">
         <button mat-mini-fab (click)="setTblCount(6)" [color]="tableCount===6 ? 'accent': 'default'"
-        matTooltip="{{'tablesCount' | translate}}">
+            matTooltip="{{'tablesCount' | translate}}">
             <mat-icon>filter_6</mat-icon>
         </button>
     </div>
@@ -51,10 +51,6 @@
             <div class='noTablePlayer'></div>
         </ng-template>
 
-
-
-
-
         <div class="example-handle" cdkDragHandle>
             <svg width="32px" fill="currentColor" viewBox="0 0 24 24">
 
@@ -73,14 +69,42 @@
                 <mat-icon>more_vert</mat-icon>
             </button>
             <mat-menu #menu="matMenu">
-                <button mat-menu-item (click)="delete(player)" >
+                <button mat-menu-item (click)="delete(player)">
                     <mat-icon>delete</mat-icon>
                     <span>{{'deletePlayer' | translate}}</span>
                 </button>
-                <button mat-menu-item (click)="edit(player)" >
+                <button mat-menu-item (click)="edit(player)">
                     <mat-icon>edit</mat-icon>
                     <span>{{'editPlayer' | translate}}</span>
                 </button>
+                <mat-divider></mat-divider>
+                <button mat-menu-item (click)="moveTo(i, 1)">
+                    <mat-icon>looks_one</mat-icon>
+                    <span>{{'movePlayer' | translate}}</span>
+                </button>
+                <button mat-menu-item (click)="moveTo(i, 2)">
+                    <mat-icon>looks_two</mat-icon>
+                    <span>{{'movePlayer' | translate}}</span>
+                </button>
+                <button mat-menu-item (click)="moveTo(i, 3)">
+                    <mat-icon>looks_3</mat-icon>
+                    <span>{{'movePlayer' | translate}}</span>
+                </button>
+                <button mat-menu-item (click)="moveTo(i, 4)">
+                    <mat-icon>looks_4</mat-icon>
+                    <span>{{'movePlayer' | translate}}</span>
+                </button>
+                <button mat-menu-item (click)="moveTo(i, 5)">
+                    <mat-icon>looks_5</mat-icon>
+                    <span>{{'movePlayer' | translate}}</span>
+                </button>
+
+                <button mat-menu-item (click)="moveTo(i, 99)">
+                    <mat-icon>file_download</mat-icon>
+                    <span>{{'movePlayer' | translate}}</span>
+                </button>
+
+
             </mat-menu>
         </div>
     </div>
