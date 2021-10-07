@@ -1,0 +1,17 @@
+.full-width {
+    width: 100%;
+  }
+  
+  mat-form-field {
+    width: 45%;
+  }
+  
+  mat-card {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  
+  .even {
+    background-color: var(--secondary-background);
+  }
+  

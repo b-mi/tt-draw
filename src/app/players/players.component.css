@@ -1,0 +1,100 @@
+table {
+    width: 100%;
+}
+
+td.mat-column-star {
+    width: 20px;
+    padding-right: 8px;
+}
+
+th.mat-column-position,
+td.mat-column-position {
+    padding-left: 8px;
+}
+
+.mat-table-sticky:first-child {
+    border-right: 1px solid #e0e0e0;
+}
+
+.mat-table-sticky:last-child {
+    border-left: 1px solid #e0e0e0;
+}
+
+.example-list {
+    max-width: 99%;
+    border: solid 1px #ccc;
+    margin-right: 3px;
+    min-height: 60px;
+    display: block;
+    background: white;
+    overflow: hidden;
+}
+
+.example-box {
+    padding: 20px 10px;
+    border-bottom: solid 1px #ccc;
+    color: rgba(0, 0, 0, 0.87);
+    display: flex;
+    box-sizing: border-box;
+    font-size: 18px;
+    background: white;
+}
+
+.example-handle {
+    width: 60px;
+    cursor: move;
+    text-align: center;
+}
+
+.player-name {
+    font-weight: bold;
+}
+
+.cdk-drag-preview {
+    box-sizing: border-box;
+    border-radius: 4px;
+    box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14),
+        0 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+
+.cdk-drag-placeholder {
+    opacity: 0;
+}
+
+.cdk-drag-animating {
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.example-box:last-child {
+    border: none;
+}
+
+.example-list.cdk-drop-list-dragging .example-box:not(.cdk-drag-placeholder) {
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.tableNo {
+    width: 20px;
+    border: dashed 1px black;
+    text-align: center;
+    color: white;
+    padding-top: 2px;
+}
+
+.tableColEven {
+    background-color: darkgreen;
+}
+.tableColOdd {
+    background-color: rgb(2, 85, 168);
+}
+
+.noTablePlayer {
+    width: 20px;
+}
+
+.example-custom-placeholder {
+    background: #ccc;
+    border: dotted 3px #999;
+    min-height: 60px;
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}

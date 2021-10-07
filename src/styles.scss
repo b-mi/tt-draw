@@ -1,0 +1,79 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/theming";
+@include mat-core();
+
+$light-primary: mat-palette($mat-indigo);
+$light-accent: mat-palette($mat-pink, A200, A100, A400);
+$light-warn: mat-palette($mat-red);
+
+$light-theme: mat-light-theme(
+  (
+    color: (
+      primary: $light-primary,
+      accent: $light-accent,
+      warn: $light-warn,
+    ),
+  )
+);
+
+:root {
+  --secondary-background: #fafafa;
+  --primary-background: white;
+  --text-color: black;
+}
+
+@include angular-material-theme($light-theme);
+.dark-theme {
+  color: $light-primary-text;
+  $dark-primary: mat-palette($mat-deep-orange);
+  $dark-accent: mat-palette($mat-indigo, A400, A100, A700);
+  $dark-warn: mat-palette($mat-red);
+  $dark-theme: mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
+  --secondary-background: #4a4a4a;
+  --primary-background: #424242;
+  --text-color: white;
+
+  @include angular-material-color($dark-theme);
+}
+
+$custom-typography: mat-typography-config(
+  $font-family: '"Comfortaa", cursive;',
+);
+@include mat-core($custom-typography);
+
+.secondary-bkg {
+  background-color: var(--secondary-background) !important;
+}
+
+.primary-bkg {
+  background-color: var(--primary-background) !important;
+}
+
+.text-color {
+  color: var(--text-color) !important;
+}
+
+.mat-toolbar2 {
+  background-color: var(--secondary-background) !important;
+  padding: 15px;
+  width: calc(100% - 30px);
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Comfortaa', cursive;
+}
+
+
+.noselect {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}

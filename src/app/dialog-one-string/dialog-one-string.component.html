@@ -1,0 +1,21 @@
+<mat-card-content>
+
+
+    <h1 mat-dialog-title>{{data.title | translate}}</h1>
+    <div mat-dialog-content>
+        <mat-card-subtitle>{{data.subtitle | translate}}</mat-card-subtitle>
+        <mat-form-field>
+            <mat-label>{{'name' | translate}}</mat-label>
+            <input matInput [(ngModel)]="data.name">
+        </mat-form-field>
+    </div>
+    <div mat-dialog-actions>
+        <button mat-button (click)="onNoClick()">
+            <mat-icon>cancel</mat-icon>
+            {{'cancel' | translate}}</button>
+        <span class="spacer"></span>
+        <button mat-button [mat-dialog-close]="data.name"
+            cdkTrapFocusAutoCapture>         <mat-icon>check</mat-icon>
+            {{data.okTitle | translate}}</button>
+    </div>
+</mat-card-content>

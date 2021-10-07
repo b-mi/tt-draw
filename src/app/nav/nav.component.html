@@ -1,0 +1,59 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false" (click)="closeSideNav()">
+    <mat-toolbar color="primary">
+      <span>
+
+      </span>
+    </mat-toolbar>
+    <!-- <mat-toolbar color="primary">
+      
+    </mat-toolbar> -->
+    <mat-nav-list>
+      <a mat-list-item>
+        <mat-slide-toggle class="noselect" (change)="themeChange($event)" [checked]="service.themeChecked">
+        </mat-slide-toggle>&nbsp;
+        {{'theme' | translate}}
+      </a>
+
+      <a mat-list-item class="noselect" (click)="service.fullScreen()">
+        <mat-icon>fullscreen</mat-icon>&nbsp;
+        {{'fullScreen' | translate}}
+      </a>
+
+      <mat-divider>
+      </mat-divider>
+
+      <mat-button-toggle-group aria-label="language" (change)='chgLang($event)' style="margin-left: 20px;">
+        <mat-button-toggle value="0">EN</mat-button-toggle>
+        <mat-button-toggle value="1">SK</mat-button-toggle>
+      </mat-button-toggle-group>
+
+      <mat-divider>
+      </mat-divider>
+
+      <a mat-list-item href="https://gitlab.com/bmi/tt-draw">
+        <mat-icon>source</mat-icon>&nbsp;
+        {{'source' | translate}}
+      </a>
+      <!-- <mat-divider>
+      </mat-divider>
+      <a mat-list-item href="https://bmi.gitlab.io/tt-draw/" target="_blank" rel="noopener noreferrer">
+        <mat-icon>person</mat-icon>
+        Gitlab
+      </a> -->
+
+
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>{{'title' | translate}}</span>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

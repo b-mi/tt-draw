@@ -1,0 +1,93 @@
+<mat-toolbar color="primary">
+    <div fxFlex="20">
+        <button color="accent" mat-mini-fab [routerLink]="[ '/' ]" matTooltip="{{'matches' | translate}}">
+            <mat-icon>safety_divider</mat-icon>
+        </button>
+    </div>
+
+    <div fxFlex="20">
+        <button mat-mini-fab (click)="setTblCount(3)" [color]="tableCount===3 ? 'accent': 'default'"
+            matTooltip="{{'tablesCount' | translate}}">
+            <mat-icon>filter_3</mat-icon>
+        </button>
+    </div>
+    <div fxFlex="20">
+        <button mat-mini-fab (click)="setTblCount(4)" [color]="tableCount===4 ? 'accent': 'default'"
+        matTooltip="{{'tablesCount' | translate}}">
+            <mat-icon>filter_4</mat-icon>
+        </button>
+    </div>
+    <div fxFlex="20">
+        <button mat-mini-fab (click)="setTblCount(5)" [color]="tableCount===5 ? 'accent': 'default'"
+        matTooltip="{{'tablesCount' | translate}}">
+            <mat-icon>filter_5</mat-icon>
+        </button>
+    </div>
+    <div fxFlex="20">
+        <button mat-mini-fab (click)="setTblCount(6)" [color]="tableCount===6 ? 'accent': 'default'"
+        matTooltip="{{'tablesCount' | translate}}">
+            <mat-icon>filter_6</mat-icon>
+        </button>
+    </div>
+    <span class="spacer"></span>
+    <div>
+        <button mat-icon-button (click)="add()" matTooltip="{{'addPlayer' | translate}}">
+            <mat-icon>add</mat-icon>
+        </button>
+    </div>
+</mat-toolbar>
+
+
+<!-- <div class="container"> -->
+<div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)" fxLayout="column"
+    fxLayoutAlign="space-between stretch">
+    <div fxLayout="row" class="example-box text-color" fxLayoutAlign="start center"
+        *ngFor="let player of names; index as i" cdkDrag [ngClass]="{'secondary-bkg': i % 2, 'primary-bkg': !(i % 2)}">
+        <div *ngIf="player.table; else noTableTemplate" class="tableNo"
+            [ngClass]="{'': player.table === '', 'tableColEven': player.table % 2, 'tableColOdd': !(player.table % 2) }">
+            {{player.table}}
+        </div>
+        <ng-template #noTableTemplate>
+            <div class='noTablePlayer'></div>
+        </ng-template>
+
+
+
+
+
+        <div class="example-handle" cdkDragHandle>
+            <svg width="32px" fill="currentColor" viewBox="0 0 24 24">
+
+                <path
+                    d="M10 9h4V6h3l-5-5-5 5h3v3zm-1 1H6V7l-5 5 5 5v-3h3v-4zm14 2l-5-5v3h-3v4h3v3l5-5zm-9 3h-4v3H7l5 5 5-5h-3v-3z">
+                </path>
+                <path d="M0 0h24v24H0z" fill="none"></path>
+            </svg>
+        </div>
+        <div class="player-name">
+            {{player.name}}
+        </div>
+        <span class="spacer"></span>
+        <div>
+            <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="menu" (click)="$event.stopPropagation()">
+                <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item (click)="delete(player)" >
+                    <mat-icon>delete</mat-icon>
+                    <span>{{'deletePlayer' | translate}}</span>
+                </button>
+                <button mat-menu-item (click)="edit(player)" >
+                    <mat-icon>edit</mat-icon>
+                    <span>{{'editPlayer' | translate}}</span>
+                </button>
+            </mat-menu>
+        </div>
+    </div>
+</div>
+<!-- </div> -->
+<!-- <div>
+    <pre>
+        {{dataSource.data | json}}
+    </pre>
+</div> -->
