@@ -1,5 +1,4 @@
 @echo off
 call npm version patch
-call ng deploy 
-rem --base-href=tt-draw
+call ng deploy  --base-href=/tt-draw/ --no-silent
 pause
