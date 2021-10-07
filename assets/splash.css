@@ -1,0 +1,25 @@
+.splash {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.5s ease-in-out, visibility 0.5s;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    /* background: red; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+app-root:not(:empty) + .splash {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.splash__image {
+    width: 100%;
+    max-width: 300px;
+}
