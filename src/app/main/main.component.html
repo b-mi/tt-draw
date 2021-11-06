@@ -32,7 +32,7 @@
     </mat-toolbar-row> -->
 </mat-toolbar>
 
-<mat-card (swipeleft)="onSwipeLeft($event)" (swiperight)="onSwipeRight($event)">
+<mat-card (swipeleft)="onSwipeLeft($event)" (swiperight)="onSwipeRight($event)" class="main-card">
 
     <div [formGroup]="form">
         <div *ngFor="let item of roundData; let i=index" [ngClass]="{'even': i % 2}"

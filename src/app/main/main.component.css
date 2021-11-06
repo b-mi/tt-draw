@@ -15,3 +15,6 @@
     background-color: var(--secondary-background);
   }
   
+  .main-card{
+    height: calc(100% - 165px);
+  }
