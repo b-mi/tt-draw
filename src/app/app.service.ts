@@ -1,5 +1,6 @@
 import { Injectable, Inject } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
+import { HttpClient } from '@angular/common/http';
 
 const BASE_ROBIN_NAMES: any[] = [
   { id: 0, table: '0', name: '-' },
@@ -25,7 +26,9 @@ export class AppService {
   langKey = 'tt-lang';
 
   langId = 1;
-  constructor(@Inject(DOCUMENT) private document: any) {
+  baseApiAddr: any = 'https://arxa.eu/rootapi';
+
+  constructor(@Inject(DOCUMENT) private document: any, private http: HttpClient) {
     const th = localStorage.getItem(this.themeKey);
     this.themeChecked = th === 'true';
     this.setTheme(this.themeChecked);
@@ -43,9 +46,6 @@ export class AppService {
     this.themeChecked = checked;
   }
 
-  setLang(langId: string) {
-    localStorage.setItem(this.langKey, langId);
-  }
 
   fullScreen() {
     if (document.fullscreenElement) {
@@ -79,5 +79,10 @@ export class AppService {
     const val = localStorage.getItem('robin-names');
     // this.showMessage('Uložené')
   }
+
+  // async ttGetAccs(): any[] {
+  //   return await lastValueFrom(this.http.get(`${this.baseApiAddr}/api/tt/get-accs`));
+  // }
+
 
 }

@@ -8,7 +8,6 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { NavComponent } from './nav/nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { A11yModule } from '@angular/cdk/a11y';
-import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatInputModule } from '@angular/material/input';
@@ -32,6 +31,7 @@ import { DialogOneStringComponent } from './dialog-one-string/dialog-one-string.
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { TranslatePipe } from './translate.pipe';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -42,12 +42,12 @@ import { TranslatePipe } from './translate.pipe';
     MainComponent,
     PlayersComponent,
     DialogOneStringComponent,
-    TranslatePipe
+    TranslatePipe,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FlexLayoutModule,
     HammerModule,
     BrowserAnimationsModule,
     LayoutModule,

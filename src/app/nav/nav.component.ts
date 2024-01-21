@@ -34,9 +34,5 @@ export class NavComponent {
     this.service.setTheme(event.checked);
   }
 
-  chgLang(event) {
-    this.service.setLang(event.value);
-    window.location.reload();
-  }
 
 }

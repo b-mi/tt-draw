@@ -21,13 +21,7 @@
         {{'fullScreen' | translate}}
       </a>
 
-      <mat-divider>
-      </mat-divider>
-
-      <mat-button-toggle-group aria-label="language" (change)='chgLang($event)' style="margin-left: 20px;">
-        <mat-button-toggle value="0">EN</mat-button-toggle>
-        <mat-button-toggle value="1">SK</mat-button-toggle>
-      </mat-button-toggle-group>
+      <a [routerLink]="['/login']" routerLinkActive="router-link-active" >Login</a>
 
       <mat-divider>
       </mat-divider>
