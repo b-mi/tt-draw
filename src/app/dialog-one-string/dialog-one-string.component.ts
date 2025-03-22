@@ -2,8 +2,9 @@ import { Component, OnInit, Inject } from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 
 @Component({
-  templateUrl: './dialog-one-string.component.html',
-  styleUrls: ['./dialog-one-string.component.css']
+    templateUrl: './dialog-one-string.component.html',
+    styleUrls: ['./dialog-one-string.component.css'],
+    standalone: false
 })
 export class DialogOneStringComponent implements OnInit {
 

@@ -5,9 +5,10 @@ import { map, shareReplay } from 'rxjs/operators';
 import { AppService } from '../app.service';
 
 @Component({
-  selector: 'app-nav',
-  templateUrl: './nav.component.html',
-  styleUrls: ['./nav.component.css']
+    selector: 'app-nav',
+    templateUrl: './nav.component.html',
+    styleUrls: ['./nav.component.css'],
+    standalone: false
 })
 export class NavComponent {
   @ViewChild('drawer') drawer: any;
