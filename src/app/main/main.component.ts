@@ -13,6 +13,7 @@ import { RouterModule } from '@angular/router';
 import { ThemeService } from '../theme.service';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatButtonModule } from '@angular/material/button';
+import { VERSION } from '../../version';
 
 @Component({
   selector: 'app-main',
@@ -41,10 +42,12 @@ export class MainComponent implements OnInit {
 
 
   form!: UntypedFormGroup;
+  version: string = '';
 
   constructor(private fb: UntypedFormBuilder, private service: AppService) { }
 
   ngOnInit() {
+    this.version = VERSION;
     this.loadPlayers();
     this.calc();
   }

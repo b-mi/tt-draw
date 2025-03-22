@@ -8,6 +8,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
+    "prebuild": "node gen-version.js",
     "deploy": "ng build --configuration production --base-href https://b-mi.github.io/tt-draw/ && ngh --dir=dist/tt-draw/browser"
   },
   "dependencies": {
