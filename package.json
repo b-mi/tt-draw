@@ -1,14 +1,15 @@
 {
   "name": "tt-draw",
   "version": "1.0.36",
+  "private": true,
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "deploy": "ng build --configuration production --base-href https://b-mi.github.io/tt-draw/ && ngh --dir=dist/tt-draw/browser"
   },
-  "private": true,
   "dependencies": {
     "@angular/animations": "^19.2.3",
     "@angular/cdk": "^19.2.6",
@@ -32,7 +33,7 @@
     "@angular/cli": "^19.2.4",
     "@angular/compiler-cli": "^19.2.3",
     "@types/jasmine": "^3.6.4",
-    "angular-cli-ghpages": "^1.0.0-rc.2",
+    "angular-cli-ghpages": "^1.0.7",
     "jasmine-core": "~3.6.0",
     "karma": "^6.4.4",
     "karma-chrome-launcher": "~3.1.0",
