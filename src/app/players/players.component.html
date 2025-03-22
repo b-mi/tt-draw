@@ -37,8 +37,6 @@
   </div>
 </mat-toolbar>
 
-
-<!-- <div class="container"> -->
 <div cdkDropList class="mat-sys-surface" (cdkDropListDropped)="drop($event)" >
   @for (player of names; track player; let i = $index) {
     <div class="fx-row drag-item" cdkDrag>
