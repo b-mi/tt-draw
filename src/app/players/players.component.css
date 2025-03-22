@@ -26,7 +26,6 @@ td.mat-column-position {
     margin-right: 3px;
     min-height: 60px;
     display: block;
-    background: white;
     overflow: hidden;
 }
 
@@ -37,7 +36,13 @@ td.mat-column-position {
     display: flex;
     box-sizing: border-box;
     font-size: 18px;
-    background: white;
+
+}
+
+
+.drag-item {
+    overflow: hidden;
+    height: 50px;
 }
 
 .example-handle {
@@ -84,6 +89,7 @@ td.mat-column-position {
 .tableColEven {
     background-color: darkgreen;
 }
+
 .tableColOdd {
     background-color: rgb(2, 85, 168);
 }

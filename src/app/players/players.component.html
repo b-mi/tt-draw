@@ -39,11 +39,9 @@
 
 
 <!-- <div class="container"> -->
-<div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)" fxLayout="column"
-  fxLayoutAlign="space-between stretch">
+<div cdkDropList class="mat-sys-surface" (cdkDropListDropped)="drop($event)" >
   @for (player of names; track player; let i = $index) {
-    <div fxLayout="row" class="example-box text-color" fxLayoutAlign="start center"
-      cdkDrag [ngClass]="{'secondary-bkg': i % 2, 'primary-bkg': !(i % 2)}">
+    <div class="fx-row drag-item" cdkDrag>
       @if (player.table) {
         <div class="tableNo"
           [ngClass]="{'': player.table === '', 'tableColEven': player.table % 2, 'tableColOdd': !(player.table % 2) }">

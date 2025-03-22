@@ -20,19 +20,16 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   gap: 1em;
-
 }
-
 
 .fx-col {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   gap: 1em;
-
 }
-
 
 .flex-20 {
   flex: 0 0 15%;

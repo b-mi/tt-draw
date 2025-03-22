@@ -52,6 +52,11 @@ body {
     color: var(--mat-sys-on-surface);
 }
 
+.mat-sys-surface {
+    background: var(--mat-sys-surface);
+    color: var(--mat-sys-on-surface);
+}
+
 .mat-sys-secondary-container {
     background-color: var(--mat-sys-secondary-container);
     color: var(--mat-sys-on-secondary-container);
