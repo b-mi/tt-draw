@@ -1,0 +1,79 @@
+{
+  "configVersion": 1,
+  "timestamp": 1742653137909,
+  "index": "https://b-mi.github.io/tt-draw/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "https://b-mi.github.io/tt-draw/favicon.ico",
+        "https://b-mi.github.io/tt-draw/index.html",
+        "https://b-mi.github.io/tt-draw/main-VKIJIOTG.js",
+        "https://b-mi.github.io/tt-draw/manifest.json",
+        "https://b-mi.github.io/tt-draw/polyfills-FFHMD2TL.js",
+        "https://b-mi.github.io/tt-draw/styles-M5APEQ2N.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "https://b-mi.github.io/tt-draw/assets/icons/icon-128x128.png",
+        "https://b-mi.github.io/tt-draw/assets/icons/icon-144x144.png",
+        "https://b-mi.github.io/tt-draw/assets/icons/icon-152x152.png",
+        "https://b-mi.github.io/tt-draw/assets/icons/icon-192x192.png",
+        "https://b-mi.github.io/tt-draw/assets/icons/icon-384x384.png",
+        "https://b-mi.github.io/tt-draw/assets/icons/icon-512x512.png",
+        "https://b-mi.github.io/tt-draw/assets/icons/icon-72x72.png",
+        "https://b-mi.github.io/tt-draw/assets/icons/icon-96x96.png"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "https://b-mi.github.io/tt-draw/assets/icons/icon-128x128.png": "d66a6209d3e1d7acb4a544b294c94e168ec2a419",
+    "https://b-mi.github.io/tt-draw/assets/icons/icon-144x144.png": "3994e661c9ee9844e07459a1e4c233d37a457ddb",
+    "https://b-mi.github.io/tt-draw/assets/icons/icon-152x152.png": "35aa3fd178c6fa152718a56057730ed6d7cfac03",
+    "https://b-mi.github.io/tt-draw/assets/icons/icon-192x192.png": "4f3bb278474937bb84cfc67d6fc54b612beb9812",
+    "https://b-mi.github.io/tt-draw/assets/icons/icon-384x384.png": "0b5bb3f7086508c7953beebb94eedeb9365e2286",
+    "https://b-mi.github.io/tt-draw/assets/icons/icon-512x512.png": "540667b414d96d804139e556ff342bdde22ca195",
+    "https://b-mi.github.io/tt-draw/assets/icons/icon-72x72.png": "389dc41c33a48a4099c35c1b2867a305f713aff7",
+    "https://b-mi.github.io/tt-draw/assets/icons/icon-96x96.png": "756b313c1d520b42f0dab8f083ff220e3f6ee42e",
+    "https://b-mi.github.io/tt-draw/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
+    "https://b-mi.github.io/tt-draw/index.html": "9ce3e1501597d84fdb2dda8c45752ddf05996d82",
+    "https://b-mi.github.io/tt-draw/main-VKIJIOTG.js": "47e8dd6f4f1a8ea496b2a00bdf9ca5f911cfa561",
+    "https://b-mi.github.io/tt-draw/manifest.json": "f0548f38fadd82fa0dd816ee3e82b75a2d26cd9c",
+    "https://b-mi.github.io/tt-draw/polyfills-FFHMD2TL.js": "f49b49a155bc7d192db62a4c15d0a612b460a667",
+    "https://b-mi.github.io/tt-draw/styles-M5APEQ2N.css": "865eb2b0d29adf112cca10a631305c9bd9ae21ae"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}
