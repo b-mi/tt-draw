@@ -74,18 +74,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "TT-Draw:build"
+            "buildTarget": "TT-Draw:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "TT-Draw:build:production"
+              "buildTarget": "TT-Draw:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "TT-Draw:build"
+            "buildTarget": "TT-Draw:build"
           }
         },
         "test": {
