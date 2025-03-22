@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, viewChild } from '@angular/core';
 import { BreakpointObserver, Breakpoints, LayoutModule } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
@@ -21,7 +21,7 @@ import { RouterModule } from '@angular/router';
     ]
 })
 export class NavComponent {
-  @ViewChild('drawer') drawer: any;
+  readonly drawer = viewChild<any>('drawer');
   matches: any;
   isHandset$: Observable<boolean>;
 
@@ -40,8 +40,9 @@ export class NavComponent {
     }
 
   closeSideNav() {
-    if (this.drawer._mode == 'over') {
-      this.drawer.close();
+    const drawer = this.drawer();
+    if (drawer._mode == 'over') {
+      drawer.close();
     }
   }
 
