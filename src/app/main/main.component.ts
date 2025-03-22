@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
+import { UntypedFormGroup, UntypedFormBuilder, UntypedFormControl } from '@angular/forms';
 import { AppService } from '../app.service';
 declare var require: any
 @Component({
@@ -21,9 +21,9 @@ export class MainComponent implements OnInit {
   playerList = [];
 
   robin2Player = {};
-  form: FormGroup;
+  form: UntypedFormGroup;
 
-  constructor(private fb: FormBuilder, private service: AppService) { }
+  constructor(private fb: UntypedFormBuilder, private service: AppService) { }
 
   ngOnInit() {
     this.robin = require('roundrobin');
@@ -42,7 +42,7 @@ export class MainComponent implements OnInit {
     this.tablesCount = 0;
     this.tablesCount = this.rounds[0].length;
     this.roundData = this.rounds[this.round];
-    this.form = new FormGroup({});
+    this.form = new UntypedFormGroup({});
     this.robin2Player = {};
 
     const rnd1 = this.rounds[0];
@@ -59,7 +59,7 @@ export class MainComponent implements OnInit {
 
     for (let pId = 1; pId <= this.playersCount; pId++) {
       const id = `p${pId}`;
-      this.form.addControl(id, new FormControl(this.robin2Player[pId]));
+      this.form.addControl(id, new UntypedFormControl(this.robin2Player[pId]));
     }
   }
 
