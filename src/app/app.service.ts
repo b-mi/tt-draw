@@ -20,30 +20,19 @@ const BASE_ROBIN_NAMES: any[] = [
 })
 export class AppService {
 
-  themeChecked: boolean = true;
-  themeName = '';
-  themeKey = 'tt-draw-theme';
+
   langKey = 'tt-lang';
 
   langId = 1;
   baseApiAddr: any = 'https://arxa.eu/rootapi';
 
   constructor(@Inject(DOCUMENT) private document: any, private http: HttpClient) {
-    const th = localStorage.getItem(this.themeKey);
-    this.themeChecked = th === 'true';
-    this.setTheme(this.themeChecked);
 
     const lgi = localStorage.getItem(this.langKey);
     if (lgi) {
       this.langId = Number.parseInt(lgi);
     }
 
-  }
-
-  setTheme(checked: any) {
-    localStorage.setItem(this.themeKey, checked);
-    this.themeName = checked === true ? 'dark-theme' : 'light-theme';
-    this.themeChecked = checked;
   }
 
 

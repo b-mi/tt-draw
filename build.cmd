@@ -1,4 +1,4 @@
 @echo off
-call npm version patch
+call versionchanger --angular
 call npm run deploy
 pause
