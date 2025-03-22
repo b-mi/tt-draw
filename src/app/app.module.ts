@@ -35,47 +35,45 @@ import { TranslatePipe } from './translate.pipe';
 
 
 @NgModule({
-  entryComponents: [],
-  declarations: [
-    AppComponent,
-    NavComponent,
-    MainComponent,
-    PlayersComponent,
-    DialogOneStringComponent,
-    TranslatePipe
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FlexLayoutModule,
-    HammerModule,
-    BrowserAnimationsModule,
-    LayoutModule,
-    MatFormFieldModule,
-    A11yModule,
-    MatToolbarModule,
-    MatCardModule,
-    MatInputModule,
-    FormsModule,
-    ReactiveFormsModule,
-    DragDropModule,
-    MatButtonModule,
-    MatSidenavModule,
-    MatDialogModule,
-    MatIconModule,
-    MatListModule,
-    MatButtonToggleModule,
-    MatTooltipModule,
-    MatChipsModule,
-    MatSlideToggleModule,
-    MatMenuModule,
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
-  ],
-  providers: [
-    { provide: LocationStrategy, useClass: HashLocationStrategy },
-    AppService,
-  ],
-  bootstrap: [AppComponent]
-
+    declarations: [
+        AppComponent,
+        NavComponent,
+        MainComponent,
+        PlayersComponent,
+        DialogOneStringComponent,
+        TranslatePipe
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        FlexLayoutModule,
+        HammerModule,
+        BrowserAnimationsModule,
+        LayoutModule,
+        MatFormFieldModule,
+        A11yModule,
+        MatToolbarModule,
+        MatCardModule,
+        MatInputModule,
+        FormsModule,
+        ReactiveFormsModule,
+        DragDropModule,
+        MatButtonModule,
+        MatSidenavModule,
+        MatDialogModule,
+        MatIconModule,
+        MatListModule,
+        MatButtonToggleModule,
+        MatTooltipModule,
+        MatChipsModule,
+        MatSlideToggleModule,
+        MatMenuModule,
+        ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
+    ],
+    providers: [
+        { provide: LocationStrategy, useClass: HashLocationStrategy },
+        AppService,
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
