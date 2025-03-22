@@ -1,6 +1,6 @@
 {
   "name": "tt-draw",
-  "version": "1.0.49",
+  "version": "1.0.51",
   "private": true,
   "scripts": {
     "ng": "ng",
