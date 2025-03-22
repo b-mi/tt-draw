@@ -1,7 +1,7 @@
 {
   "configVersion": 1,
-  "timestamp": 1742678685965,
-  "index": "/b-mi/index.html",
+  "timestamp": 1742679086177,
+  "index": "/tt-draw/index.html",
   "assetGroups": [
     {
       "name": "app",
@@ -11,12 +11,12 @@
         "ignoreVary": true
       },
       "urls": [
-        "/b-mi/favicon.ico",
-        "/b-mi/index.html",
-        "/b-mi/main-KFKGDYNB.js",
-        "/b-mi/manifest.json",
-        "/b-mi/polyfills-FFHMD2TL.js",
-        "/b-mi/styles-M5APEQ2N.css"
+        "/tt-draw/favicon.ico",
+        "/tt-draw/index.html",
+        "/tt-draw/main-PYRJUGR6.js",
+        "/tt-draw/manifest.json",
+        "/tt-draw/polyfills-FFHMD2TL.js",
+        "/tt-draw/styles-M5APEQ2N.css"
       ],
       "patterns": []
     },
@@ -28,34 +28,34 @@
         "ignoreVary": true
       },
       "urls": [
-        "/b-mi/assets/icons/icon-128x128.png",
-        "/b-mi/assets/icons/icon-144x144.png",
-        "/b-mi/assets/icons/icon-152x152.png",
-        "/b-mi/assets/icons/icon-192x192.png",
-        "/b-mi/assets/icons/icon-384x384.png",
-        "/b-mi/assets/icons/icon-512x512.png",
-        "/b-mi/assets/icons/icon-72x72.png",
-        "/b-mi/assets/icons/icon-96x96.png"
+        "/tt-draw/assets/icons/icon-128x128.png",
+        "/tt-draw/assets/icons/icon-144x144.png",
+        "/tt-draw/assets/icons/icon-152x152.png",
+        "/tt-draw/assets/icons/icon-192x192.png",
+        "/tt-draw/assets/icons/icon-384x384.png",
+        "/tt-draw/assets/icons/icon-512x512.png",
+        "/tt-draw/assets/icons/icon-72x72.png",
+        "/tt-draw/assets/icons/icon-96x96.png"
       ],
       "patterns": []
     }
   ],
   "dataGroups": [],
   "hashTable": {
-    "/b-mi/assets/icons/icon-128x128.png": "d66a6209d3e1d7acb4a544b294c94e168ec2a419",
-    "/b-mi/assets/icons/icon-144x144.png": "3994e661c9ee9844e07459a1e4c233d37a457ddb",
-    "/b-mi/assets/icons/icon-152x152.png": "35aa3fd178c6fa152718a56057730ed6d7cfac03",
-    "/b-mi/assets/icons/icon-192x192.png": "4f3bb278474937bb84cfc67d6fc54b612beb9812",
-    "/b-mi/assets/icons/icon-384x384.png": "0b5bb3f7086508c7953beebb94eedeb9365e2286",
-    "/b-mi/assets/icons/icon-512x512.png": "540667b414d96d804139e556ff342bdde22ca195",
-    "/b-mi/assets/icons/icon-72x72.png": "389dc41c33a48a4099c35c1b2867a305f713aff7",
-    "/b-mi/assets/icons/icon-96x96.png": "756b313c1d520b42f0dab8f083ff220e3f6ee42e",
-    "/b-mi/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "/b-mi/index.html": "ca8cef7af411b772850cafd3abf9ad0ec1e40f67",
-    "/b-mi/main-KFKGDYNB.js": "22c894052ed8c2e3cd338283c52201276c10736d",
-    "/b-mi/manifest.json": "f0548f38fadd82fa0dd816ee3e82b75a2d26cd9c",
-    "/b-mi/polyfills-FFHMD2TL.js": "f49b49a155bc7d192db62a4c15d0a612b460a667",
-    "/b-mi/styles-M5APEQ2N.css": "865eb2b0d29adf112cca10a631305c9bd9ae21ae"
+    "/tt-draw/assets/icons/icon-128x128.png": "d66a6209d3e1d7acb4a544b294c94e168ec2a419",
+    "/tt-draw/assets/icons/icon-144x144.png": "3994e661c9ee9844e07459a1e4c233d37a457ddb",
+    "/tt-draw/assets/icons/icon-152x152.png": "35aa3fd178c6fa152718a56057730ed6d7cfac03",
+    "/tt-draw/assets/icons/icon-192x192.png": "4f3bb278474937bb84cfc67d6fc54b612beb9812",
+    "/tt-draw/assets/icons/icon-384x384.png": "0b5bb3f7086508c7953beebb94eedeb9365e2286",
+    "/tt-draw/assets/icons/icon-512x512.png": "540667b414d96d804139e556ff342bdde22ca195",
+    "/tt-draw/assets/icons/icon-72x72.png": "389dc41c33a48a4099c35c1b2867a305f713aff7",
+    "/tt-draw/assets/icons/icon-96x96.png": "756b313c1d520b42f0dab8f083ff220e3f6ee42e",
+    "/tt-draw/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
+    "/tt-draw/index.html": "55b81cc30cd4add001711141dc553056ad552c1d",
+    "/tt-draw/main-PYRJUGR6.js": "b0fb0014209f16e965d1f8cb70299059a074b630",
+    "/tt-draw/manifest.json": "f0548f38fadd82fa0dd816ee3e82b75a2d26cd9c",
+    "/tt-draw/polyfills-FFHMD2TL.js": "f49b49a155bc7d192db62a4c15d0a612b460a667",
+    "/tt-draw/styles-M5APEQ2N.css": "865eb2b0d29adf112cca10a631305c9bd9ae21ae"
   },
   "navigationUrls": [
     {
