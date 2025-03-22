@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { UntypedFormGroup, UntypedFormBuilder, UntypedFormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppService } from '../app.service';
 import { MatCardModule } from '@angular/material/card';
@@ -10,19 +10,23 @@ import { TranslatePipe } from '../translate.pipe';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterModule } from '@angular/router';
-declare var require: any
+import { ThemeService } from '../theme.service';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatButtonModule } from '@angular/material/button';
+
 @Component({
-    selector: 'app-main',
-    templateUrl: './main.component.html',
-    styleUrls: ['./main.component.css'],
-    imports: [MatCardModule, FormsModule, MatFormFieldModule, MatDividerModule,
-      ReactiveFormsModule, NgClass, MatTooltipModule, TranslatePipe,
-      MatIconModule, MatToolbarModule, RouterModule
-    ]
+  selector: 'app-main',
+  templateUrl: './main.component.html',
+  styleUrls: ['./main.component.css'],
+  imports: [MatCardModule, FormsModule, MatFormFieldModule, MatDividerModule,
+    ReactiveFormsModule, NgClass, MatTooltipModule, TranslatePipe,
+    MatIconModule, MatToolbarModule, RouterModule, MatSlideToggleModule,
+    MatButtonModule
+  ]
 })
 export class MainComponent implements OnInit {
 
-  robin: any;
+  public themeService = inject(ThemeService);
   rounds: any[] = [];
   round = 0;
   roundsCount = 0;
@@ -41,7 +45,6 @@ export class MainComponent implements OnInit {
   constructor(private fb: UntypedFormBuilder, private service: AppService) { }
 
   ngOnInit() {
-    this.robin = require('roundrobin');
     this.loadPlayers();
     this.calc();
   }
@@ -52,7 +55,7 @@ export class MainComponent implements OnInit {
   }
 
   calc() {
-    this.rounds = this.robin(this.playersCount);
+    this.rounds = this.roundrobin(this.playersCount, []);
     this.roundsCount = this.rounds.length;
     this.tablesCount = 0;
     this.tablesCount = this.rounds[0].length;
@@ -110,5 +113,39 @@ export class MainComponent implements OnInit {
     }
 
   }
+
+
+  roundrobin(n: number, ps: any[]) {  // n = num players
+    const DUMMY = -1;
+    const rs: any[] = [];                  // rs = round array
+    if (!ps) {
+      ps = [];
+      for (let k = 1; k <= n; k += 1) {
+        ps.push(k);
+      }
+    } else {
+      ps = ps.slice();
+    }
+
+    if (n % 2 === 1) {
+      ps.push(DUMMY); // so we can match algorithm for even numbers
+      n += 1;
+    }
+    for (let j = 0; j < n - 1; j += 1) {
+      rs[j] = []; // create inner match array for round j
+      for (let i = 0; i < n / 2; i += 1) {
+        const o = n - 1 - i;
+        if (ps[i] !== DUMMY && ps[o] !== DUMMY) {
+          // flip orders to ensure everyone gets roughly n/2 home matches
+          const isHome = i === 0 && j % 2 === 1;
+          // insert pair as a match - [ away, home ]
+          rs[j].push([isHome ? ps[o] : ps[i], isHome ? ps[i] : ps[o]]);
+        }
+      }
+      ps.splice(1, 0, ps.pop()); // permutate for next round
+    }
+    return rs;
+  };
+
 
 }

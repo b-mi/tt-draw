@@ -5,12 +5,14 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { TranslatePipe } from '../translate.pipe';
 import { FormsModule, NgModel } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import {MatInputModule} from '@angular/material/input';
 
 @Component({
   templateUrl: './dialog-one-string.component.html',
   styleUrls: ['./dialog-one-string.component.css'],
   imports: [MatCardModule, MatFormFieldModule, TranslatePipe, FormsModule,
-    MatIconModule, MatDialogModule
+    MatIconModule, MatDialogModule, MatButtonModule, MatInputModule
   ]
 })
 export class DialogOneStringComponent implements OnInit {

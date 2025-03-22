@@ -1,0 +1,69 @@
+@use "@angular/material" as mat;
+
+html {
+    // Aplikovanie svetlej témy so zadanou paletou, typografiou a hustotou
+    color-scheme: light;
+    @include mat.theme(
+        (
+            color: mat.$violet-palette,
+            typography: Roboto,
+            density: 0
+        )
+    );
+}
+
+/*
+$red-palette
+$green-palette
+$blue-palette
+$yellow-palette
+$cyan-palette
+$magenta-palette
+$orange-palette
+$chartreuse-palette
+$spring-green-palette
+$azure-palette
+$violet-palette
+$rose-palette
+*/
+
+:root {
+    // --mdc-list-list-item-two-line-container-height: 54px;
+    // --mdc-list-list-item-one-line-container-height: 30px;
+
+    @include mat.toolbar-overrides(
+        (
+            container-background-color: var(--mat-sys-tertiary-container),
+            container-text-color: var(--mat-sys-on-tertiary-container)
+        )
+    );
+
+    @include mat.dialog-overrides(
+        (
+            container-color: var(--mat-sys-tertiary-container),
+            subhead-color: var(--mat-sys-on-tertiary-container)
+        )
+    );
+}
+
+// Použitie farby pozadia a textu z definovaných CSS premenných
+body {
+    background: var(--mat-sys-surface);
+    color: var(--mat-sys-on-surface);
+}
+
+.mat-sys-secondary-container {
+    background-color: var(--mat-sys-secondary-container);
+    color: var(--mat-sys-on-secondary-container);
+}
+
+.mat-sys-secondary-container-alt:nth-child(even) {
+    background-color: var(--mat-sys-surface-container-highest);
+    color: var(--mat-sys-on-secondary-container);
+}
+
+// Pri pridaní triedy dark-mode sa aplikuje tmavý režim
+body.dark-mode {
+    color-scheme: dark;
+}
+

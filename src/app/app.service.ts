@@ -52,9 +52,9 @@ export class AppService {
       document.exitFullscreen();
     } else {
       const doce = document.body;
-      let methodToBeInvoked = doce.requestFullscreen || doce['mozRequestFullscreen']
+      let methodToBeInvoked = doce.requestFullscreen
         ||
-        doce['msRequestFullscreen'];
+        doce['requestFullscreen'];
       if (methodToBeInvoked) {
         methodToBeInvoked.call(doce);
       }

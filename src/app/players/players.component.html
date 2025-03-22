@@ -1,29 +1,29 @@
 <mat-toolbar color="primary">
-  <div fxFlex="20">
+  <div class="flex-20">
     <button color="accent" mat-mini-fab [routerLink]="[ '/' ]" matTooltip="{{'matches' | translate}}">
       <mat-icon>sports_tennis</mat-icon>
     </button>
   </div>
 
-  <div fxFlex="20">
+  <div class="flex-20">
     <button mat-mini-fab (click)="setTblCount(3)" [color]="tableCount===3 ? 'accent': 'default'"
       matTooltip="{{'tablesCount' | translate}}">
       <mat-icon>filter_3</mat-icon>
     </button>
   </div>
-  <div fxFlex="20">
+  <div class="flex-20">
     <button mat-mini-fab (click)="setTblCount(4)" [color]="tableCount===4 ? 'accent': 'default'"
       matTooltip="{{'tablesCount' | translate}}">
       <mat-icon>filter_4</mat-icon>
     </button>
   </div>
-  <div fxFlex="20">
+  <div class="flex-20">
     <button mat-mini-fab (click)="setTblCount(5)" [color]="tableCount===5 ? 'accent': 'default'"
       matTooltip="{{'tablesCount' | translate}}">
       <mat-icon>filter_5</mat-icon>
     </button>
   </div>
-  <div fxFlex="20">
+  <div class="flex-20">
     <button mat-mini-fab (click)="setTblCount(6)" [color]="tableCount===6 ? 'accent': 'default'"
       matTooltip="{{'tablesCount' | translate}}">
       <mat-icon>filter_6</mat-icon>
