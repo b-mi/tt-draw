@@ -56,8 +56,6 @@ export class MainComponent implements OnInit {
 
   calc() {
     this.rounds = this.roundrobin(this.playersCount, []);
-    console.log('round', this.playersCount, this.rounds);
-
     this.roundsCount = this.rounds.length;
     this.tablesCount = 0;
     this.tablesCount = this.rounds[0].length;
@@ -118,8 +116,6 @@ export class MainComponent implements OnInit {
 
 
   roundrobin(n: number, ps: any[]) {  // n = num players
-    console.log('roundrobin');
-    
     const DUMMY = -1;
     const rs: any[] = [];                  // rs = round array
     ps = [];
