@@ -3,21 +3,33 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { AppService } from '../app.service';
 import { Observable } from 'rxjs';
-import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
+import { CdkDragDrop, DragDropModule, moveItemInArray } from '@angular/cdk/drag-drop';
 import { DialogOneStringComponent } from '../dialog-one-string/dialog-one-string.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import { RouterModule } from '@angular/router';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { TranslatePipe } from '../translate.pipe';
+import { NgClass } from '@angular/common';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
     selector: 'app-players',
     templateUrl: './players.component.html',
     styleUrls: ['./players.component.css'],
-    standalone: false
+    imports: [MatToolbarModule, MatIconModule, RouterModule, MatTooltipModule,
+      TranslatePipe, NgClass, MatMenuModule, MatDividerModule, MatButtonModule,
+      DragDropModule
+    ]
 })
 export class PlayersComponent implements OnInit {
 
   //   displayedColumns: string[] = ['select', 'name', 'table', 'star'];
   //   selection = new SelectionModel<any>(true, []);
   loaded = false;
-  names = [];
+  names: any[] = [];
   tableCount = 3;
   constructor(public service: AppService, public dialog: MatDialog) {
     this.reload();
@@ -38,7 +50,7 @@ export class PlayersComponent implements OnInit {
     this.reload();
   }
 
-  delete(element) {
+  delete(element: any) {
 
     this.openDlg('deletePlayer', '', 'delete', element.name).subscribe(delName => {
       if (delName) {
@@ -52,7 +64,7 @@ export class PlayersComponent implements OnInit {
 
   }
 
-  edit(element) {
+  edit(element: any) {
     this.openDlg('editPlayer', '', 'save', element.name).subscribe(updName => {
       if (updName) {
         element.name = updName;
@@ -119,7 +131,7 @@ export class PlayersComponent implements OnInit {
     });
   }
 
-  moveTo(fromIdx, toTable: number) {
+  moveTo(fromIdx: number, toTable: number) {
     const toIdx = toTable === 99 ? this.names.length - 1 : (toTable - 1 ) * 2;
     const item = this.names[fromIdx];
     this.names.splice(fromIdx, 1);

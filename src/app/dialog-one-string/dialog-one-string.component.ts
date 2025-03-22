@@ -1,16 +1,23 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { MatCardModule } from '@angular/material/card';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA, MatDialogModule } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { TranslatePipe } from '../translate.pipe';
+import { FormsModule, NgModel } from '@angular/forms';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
-    templateUrl: './dialog-one-string.component.html',
-    styleUrls: ['./dialog-one-string.component.css'],
-    standalone: false
+  templateUrl: './dialog-one-string.component.html',
+  styleUrls: ['./dialog-one-string.component.css'],
+  imports: [MatCardModule, MatFormFieldModule, TranslatePipe, FormsModule,
+    MatIconModule, MatDialogModule
+  ]
 })
 export class DialogOneStringComponent implements OnInit {
 
   constructor(
     public dialogRef: MatDialogRef<DialogOneStringComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any) {}
+    @Inject(MAT_DIALOG_DATA) public data: any) { }
 
   onNoClick(): void {
     this.dialogRef.close();

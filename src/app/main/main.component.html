@@ -1,59 +1,61 @@
 <mat-toolbar color="primary">
-    <mat-toolbar-row color="primary">
-        <div>
-            <button mat-mini-fab color="accent" [routerLink]="[ '/players' ]" matTooltip="{{'selectPlayers' | translate}}"><mat-icon>person_add_alt</mat-icon></button>
-            <!-- <span class="mat-h3">
-            {{playersCount}}</span> -->
-        </div>
-        <span class="spacer"></span>
-        <div fxLayout="row">
+  <mat-toolbar-row color="primary">
+    <div>
+      <button mat-mini-fab color="accent" [routerLink]="[ '/players' ]" matTooltip="{{'selectPlayers' | translate}}"><mat-icon>person_add_alt</mat-icon></button>
+      <!-- <span class="mat-h3">
+    {{playersCount}}</span> -->
+  </div>
+  <span class="spacer"></span>
+  <div fxLayout="row">
 
-            <button mat-icon-button (click)="setRound(-1)" [disabled]="round<1" aria-label="next"
-                matTooltip="{{'back' | translate}}">
-                <mat-icon>arrow_back</mat-icon>
-            </button>
-            <span class="mat-h3">
-                <button mat-mini-fab color="accent">
-                    <span class="mat-h3">
-                        {{round+1}}
-                    </span>
-                </button>
-                / {{roundsCount}}
-            </span>
-            <button mat-icon-button (click)="setRound(1)" [disabled]="round>roundsCount-2" aria-label="predošlé kolo"
-                matTooltip="{{'forward' | translate}}">
-                <mat-icon>arrow_forward</mat-icon>
-            </button>
+    <button mat-icon-button (click)="setRound(-1)" [disabled]="round<1" aria-label="next"
+      matTooltip="{{'back' | translate}}">
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+    <span class="mat-h3">
+      <button mat-mini-fab color="accent">
+        <span class="mat-h3">
+          {{round+1}}
+        </span>
+      </button>
+      / {{roundsCount}}
+    </span>
+    <button mat-icon-button (click)="setRound(1)" [disabled]="round>roundsCount-2" aria-label="predošlé kolo"
+      matTooltip="{{'forward' | translate}}">
+      <mat-icon>arrow_forward</mat-icon>
+    </button>
 
-        </div>
-    </mat-toolbar-row>
-    <!-- <mat-toolbar-row>
-        <span class="spacer"></span>
-    </mat-toolbar-row> -->
+  </div>
+</mat-toolbar-row>
+<!-- <mat-toolbar-row>
+<span class="spacer"></span>
+</mat-toolbar-row> -->
 </mat-toolbar>
 
 <mat-card appearance="outlined" (swipeleft)="onSwipeLeft($event)" (swiperight)="onSwipeRight($event)" class="main-card">
 
-    <div [formGroup]="form">
-        <div *ngFor="let item of roundData; let i=index" [ngClass]="{'even': i % 2}"
-            style="padding-top: 5px;padding-left: 16px; padding-right: 16px;">
-            <div class="mat-card-subtitle noselect">{{i+1}}</div>
-            <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="10px">
-                <div class="noselect mat-h2">
-                    {{robin2Player[item[0]]?.name}}
-                </div>
-                <div class="noselect mat-h2">
-                    {{robin2Player[item[1]]?.name}}
-                </div>
-            </div>
-            <mat-divider>
-            </mat-divider>
+  <div [formGroup]="form">
+    @for (item of roundData; track item; let i = $index) {
+      <div [ngClass]="{'even': i % 2}"
+        style="padding-top: 5px;padding-left: 16px; padding-right: 16px;">
+        <div class="mat-card-subtitle noselect">{{i+1}}</div>
+        <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="10px">
+          <div class="noselect mat-h2">
+            {{robin2Player[item[0]]?.name}}
+          </div>
+          <div class="noselect mat-h2">
+            {{robin2Player[item[1]]?.name}}
+          </div>
         </div>
-    </div>
+        <mat-divider>
+        </mat-divider>
+      </div>
+    }
+  </div>
 </mat-card>
 
 <!-- <pre>
-    {{form.value | json}}
+{{form.value | json}}
 </pre> -->
 <!-- <button mat-raised-button color="default">default</button>
 <button mat-raised-button color="primary">primary</button>

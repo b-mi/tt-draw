@@ -1,28 +1,42 @@
 import { Component, OnInit } from '@angular/core';
-import { UntypedFormGroup, UntypedFormBuilder, UntypedFormControl } from '@angular/forms';
+import { UntypedFormGroup, UntypedFormBuilder, UntypedFormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppService } from '../app.service';
+import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatDividerModule } from '@angular/material/divider';
+import { NgClass } from '@angular/common';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { TranslatePipe } from '../translate.pipe';
+import { MatIconModule } from '@angular/material/icon';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { RouterModule } from '@angular/router';
 declare var require: any
 @Component({
     selector: 'app-main',
     templateUrl: './main.component.html',
     styleUrls: ['./main.component.css'],
-    standalone: false
+    imports: [MatCardModule, FormsModule, MatFormFieldModule, MatDividerModule,
+      ReactiveFormsModule, NgClass, MatTooltipModule, TranslatePipe,
+      MatIconModule, MatToolbarModule, RouterModule
+    ]
 })
 export class MainComponent implements OnInit {
 
   robin: any;
-  rounds = [];
+  rounds: any[] = [];
   round = 0;
   roundsCount = 0;
   playersCount = 8;
   tablesCount = 0;
   roundData = [];
-  // playerNames: { [pid: string]: string } = {};
-  playerNames = {};
-  playerList = [];
+  playerNames: { [pid: string]: string } = {};
+  // playerNames = {};
+  playerList: any[] = [];
 
-  robin2Player = {};
-  form: UntypedFormGroup;
+  robin2Player: { [key: string]: any } = {};
+
+
+  form!: UntypedFormGroup;
 
   constructor(private fb: UntypedFormBuilder, private service: AppService) { }
 
@@ -84,13 +98,13 @@ export class MainComponent implements OnInit {
 
   }
 
-  onSwipeLeft(event) {
+  onSwipeLeft(event: any) {
     if (this.round < this.roundsCount - 1) {
       this.setRound(1)
     }
   }
 
-  onSwipeRight(event) {
+  onSwipeRight(event: any) {
     if (this.round > 0) {
       this.setRound(-1)
     }
