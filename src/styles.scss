@@ -11,8 +11,8 @@ $light-theme: mat-light-theme(
     color: (
       primary: $light-primary,
       accent: $light-accent,
-      warn: $light-warn,
-    ),
+      warn: $light-warn
+    )
   )
 );
 
@@ -37,7 +37,7 @@ $light-theme: mat-light-theme(
 }
 
 $custom-typography: mat-typography-config(
-  $font-family: '"Comfortaa", cursive;',
+  $font-family: '"Comfortaa", cursive;'
 );
 @include mat-core($custom-typography);
 
@@ -63,9 +63,8 @@ html,
 body {
   height: 100%;
   margin: 0;
-  font-family: 'Comfortaa', cursive;
+  font-family: "Comfortaa", cursive;
 }
-
 
 .noselect {
   -webkit-user-select: none;
@@ -76,4 +75,21 @@ body {
 
 .spacer {
   flex: 1 1 auto;
+}
+
+.fx-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 1em;
+
+}
+
+
+.fx-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1em;
+
 }
