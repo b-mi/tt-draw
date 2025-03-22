@@ -1,0 +1,24 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "nvm use 10.24.1",
+            "type": "shell",
+            "command": "nvm use 10.24.1",
+            "problemMatcher": [],
+            "runOptions": {
+                "runOn": "folderOpen"
+            },
+            "hide": true,
+            "promptOnClose": false,
+            "presentation": {
+                "echo": false,
+                "reveal": "silent",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": false,
+                "clear": true
+            }
+        }
+    ]
+}
