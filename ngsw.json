@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1742719785410,
+  "timestamp": 1742720135236,
   "index": "/tt-draw/index.html",
   "assetGroups": [
     {
@@ -13,7 +13,7 @@
       "urls": [
         "/tt-draw/favicon.ico",
         "/tt-draw/index.html",
-        "/tt-draw/main-VZKCE3AJ.js",
+        "/tt-draw/main-FZMFWRVK.js",
         "/tt-draw/manifest.webmanifest",
         "/tt-draw/polyfills-FFHMD2TL.js",
         "/tt-draw/styles-M5APEQ2N.css"
@@ -51,8 +51,8 @@
     "/tt-draw/assets/icons/icon-72x72.png": "389dc41c33a48a4099c35c1b2867a305f713aff7",
     "/tt-draw/assets/icons/icon-96x96.png": "756b313c1d520b42f0dab8f083ff220e3f6ee42e",
     "/tt-draw/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "/tt-draw/index.html": "d107633909e5cfc1fd8de5c1f29d828afa6db129",
-    "/tt-draw/main-VZKCE3AJ.js": "b0d9b3b28f8edb762f8fb05ca6fad189df7f11e3",
+    "/tt-draw/index.html": "dde46e77a13c4679a28ae05ec3c0ab5c26411c6d",
+    "/tt-draw/main-FZMFWRVK.js": "5b6e2c33619611ff4d8c2433aa15136151a88e1c",
     "/tt-draw/manifest.webmanifest": "c93a0e540ded91cbc905e610708aefb7545d779f",
     "/tt-draw/polyfills-FFHMD2TL.js": "f49b49a155bc7d192db62a4c15d0a612b460a667",
     "/tt-draw/styles-M5APEQ2N.css": "865eb2b0d29adf112cca10a631305c9bd9ae21ae"
