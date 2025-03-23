@@ -1,4 +1,5 @@
 @echo off
 call versionchanger --angular
-call npm run deploy
+call ng deploy --base-href=/tt-draw/ --no-silent
+rem call npm run deploy
 pause
