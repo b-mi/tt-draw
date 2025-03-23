@@ -2,8 +2,7 @@ import { Component, inject, OnInit } from '@angular/core';
 import { AppService } from './app.service';
 import { RouterModule } from '@angular/router';
 // import { PromptUpdateService } from './prompt-update.service';
-import { SwUpdate, VersionReadyEvent } from '@angular/service-worker';
-import { filter } from 'rxjs';
+import { SwUpdate } from '@angular/service-worker';
 
 @Component({
     selector: 'app-root',
@@ -53,5 +52,13 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+  onSwipeLeft() {
+    console.log('Swipe doľava');
+  }
+
+  onSwipeRight() {
+    console.log('Swipe doprava');
   }
 }

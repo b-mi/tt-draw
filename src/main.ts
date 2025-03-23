@@ -1,5 +1,6 @@
-import { enableProdMode, isDevMode } from '@angular/core';
-import { bootstrapApplication } from '@angular/platform-browser';
+import 'hammerjs';
+import { importProvidersFrom, isDevMode } from '@angular/core';
+import { bootstrapApplication, HAMMER_GESTURE_CONFIG, HammerModule } from '@angular/platform-browser';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { provideRouter } from '@angular/router';
 import { AppComponent } from './app/app.component';
@@ -8,7 +9,7 @@ import { provideServiceWorker } from '@angular/service-worker';
 import { provideHttpClient } from '@angular/common/http';
 import { AppService } from './app/app.service';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
-
+import { MyHammerConfig } from './hammer.config';
 
 bootstrapApplication(AppComponent, {
   providers: [
@@ -17,6 +18,11 @@ bootstrapApplication(AppComponent, {
     provideHttpClient(),
     AppService,
     { provide: LocationStrategy, useClass: HashLocationStrategy },
+    importProvidersFrom(HammerModule),
+    {
+      provide: HAMMER_GESTURE_CONFIG,
+      useClass: MyHammerConfig,
+    },
     provideServiceWorker('ngsw-worker.js', {
       enabled:  !isDevMode(),
       registrationStrategy: 'registerImmediately'

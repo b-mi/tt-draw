@@ -17,7 +17,7 @@
   }
   
   .main-card{
-    height: calc(100% - 165px);
+    height: calc(100% - 60px);
   }
 
   .row {

@@ -105,17 +105,22 @@ export class MainComponent implements OnInit {
   }
 
   onSwipeLeft(event: any) {
+    console.log('left');
+
     if (this.round < this.roundsCount - 1) {
       this.setRound(1)
     }
   }
 
   onSwipeRight(event: any) {
+    console.log('right');
     if (this.round > 0) {
       this.setRound(-1)
     }
 
   }
+
+
 
 
   roundrobin(n: number, ps: any[]) {  // n = num players
