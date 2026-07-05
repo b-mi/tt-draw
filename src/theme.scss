@@ -6,7 +6,13 @@ html {
     @include mat.theme(
         (
             color: mat.$yellow-palette,
-            typography: Roboto,
+            typography: (
+                plain-family: "Comfortaa",
+                brand-family: "Comfortaa",
+                bold-weight: 700,
+                medium-weight: 600,
+                regular-weight: 400
+            ),
             density: 0
         )
     );

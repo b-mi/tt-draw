@@ -42,18 +42,51 @@ td.mat-column-position {
 
 .drag-item {
     overflow: hidden;
-    height: 50px;
+    height: var(--player-row-height, 50px);
     margin-left: 10px;
 }
 
 .example-handle {
     width: 60px;
+    flex-shrink: 0;
     cursor: move;
     text-align: center;
 }
 
+.example-handle-spacer {
+    cursor: default;
+    visibility: hidden;
+}
+
+.row-actions {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.menu-spacer {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+}
+
 .player-name {
     font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.sit-out-row {
+    opacity: 0.9;
+}
+
+.sit-out-icon {
+    font-size: 28px;
+    width: 28px;
+    height: 28px;
+    color: var(--mat-sys-on-surface);
+    opacity: 0.85;
 }
 
 .cdk-drag-preview {
@@ -104,4 +137,74 @@ td.mat-column-position {
     border: dotted 3px #999;
     min-height: 60px;
     transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.players-layout {
+    --player-row-height: 50px;
+
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 64px);
+    overflow: hidden;
+}
+
+.zone {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+}
+
+.zone-tonight {
+    flex: 0 0 auto;
+    min-height: 100px;
+    overflow: hidden;
+}
+
+.zone-others {
+    flex: 1 1 auto;
+    min-height: 100px;
+    overflow: hidden;
+}
+
+.zone-splitter {
+    flex: 0 0 8px;
+    cursor: row-resize;
+    touch-action: none;
+    background: var(--mat-sys-outline-variant, #ccc);
+}
+
+.zone-splitter:hover,
+.zone-splitter:active {
+    background: var(--mat-sys-primary, #1976d2);
+    opacity: 0.45;
+}
+
+.zone-title {
+    margin: 8px 12px 4px;
+    font-size: 14px;
+    font-weight: 600;
+    opacity: 0.85;
+    flex: 0 0 auto;
+}
+
+.drop-zone {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-y: auto;
+}
+
+.reserve-row {
+    opacity: 0.75;
+}
+
+.empty-slot {
+    opacity: 0.45;
+    border: 1px dashed var(--mat-sys-outline, #999);
+    margin-right: 10px;
+    border-radius: 4px;
+}
+
+.slot-hint {
+    font-weight: normal;
+    font-style: italic;
 }

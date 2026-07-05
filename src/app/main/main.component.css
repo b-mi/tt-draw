@@ -20,6 +20,29 @@
     height: calc(100% - 60px);
   }
 
+  .warning-banner {
+    background-color: var(--mat-sys-error-container, #ffebee);
+    color: var(--mat-sys-on-error-container, #b71c1c);
+    padding: 8px 16px;
+    text-align: center;
+    font-size: 14px;
+  }
+
+  .match-name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 4rem;
+  }
+
+  .sit-out-icon {
+    font-size: 36px;
+    width: 36px;
+    height: 36px;
+    color: var(--mat-sys-on-surface);
+    opacity: 0.85;
+  }
+
   .row {
     margin-top: 10px;
     margin-left: 10px;

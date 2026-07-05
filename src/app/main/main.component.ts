@@ -14,6 +14,7 @@ import { ThemeService } from '../theme.service';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatButtonModule } from '@angular/material/button';
 import { VERSION } from '../../version';
+import { RobinPlayer } from '../player.model';
 
 @Component({
   selector: 'app-main',
@@ -34,15 +35,16 @@ export class MainComponent implements OnInit {
   playersCount = 8;
   tablesCount = 0;
   roundData = [];
-  playerNames: { [pid: string]: string } = {};
+  playerNames: { [pid: string]: RobinPlayer } = {};
   // playerNames = {};
-  playerList: any[] = [];
+  playerList: RobinPlayer[] = [];
 
-  robin2Player: { [key: string]: any } = {};
+  robin2Player: { [key: string]: RobinPlayer } = {};
 
 
   form!: UntypedFormGroup;
   version: string = '';
+  warningMessage = '';
 
   constructor(private fb: UntypedFormBuilder, private service: AppService) { }
 
@@ -61,10 +63,17 @@ export class MainComponent implements OnInit {
     this.rounds = this.roundrobin(this.playersCount, []);
     this.roundsCount = this.rounds.length;
     this.tablesCount = 0;
-    this.tablesCount = this.rounds[0].length;
-    this.roundData = this.rounds[this.round];
     this.form = new UntypedFormGroup({});
     this.robin2Player = {};
+
+    if (this.rounds.length === 0) {
+      this.roundData = [];
+      this.checkWarnings();
+      return;
+    }
+
+    this.tablesCount = this.rounds[0].length;
+    this.roundData = this.rounds[this.round];
 
     const rnd1 = this.rounds[0];
     for (let tbl = 1; tbl <= this.tablesCount; tbl++) {
@@ -82,6 +91,36 @@ export class MainComponent implements OnInit {
       const id = `p${pId}`;
       this.form.addControl(id, new UntypedFormControl(this.robin2Player[pId]));
     }
+
+    this.checkWarnings();
+  }
+
+  checkWarnings(): void {
+    const all = this.service.ensureSitOutPlayer(this.service.getRobinNames());
+    const realActive = this.service.getActiveWithTable(all).filter(p => this.service.isRealPlayer(p));
+    const sitOutActive = this.service.getActiveWithTable(all).some(p => this.service.isSitOut(p));
+
+    if (realActive.length % 2 === 1 && !sitOutActive) {
+      this.warningMessage = 'Presuň sediaceho hráča medzi dnešných a priraď stôl (nepárny počet).';
+      console.warn(this.warningMessage);
+      return;
+    }
+
+    for (const rnd of this.rounds) {
+      for (const [a, b] of rnd) {
+        if (!this.robin2Player[a] || !this.robin2Player[b]) {
+          this.warningMessage = 'Skontroluj usadenie pri stoloch.';
+          console.warn(this.warningMessage);
+          return;
+        }
+      }
+    }
+
+    this.warningMessage = '';
+  }
+
+  isSitOutPlayer(player: RobinPlayer | undefined): boolean {
+    return !!player && this.service.isSitOut(player);
   }
 
   setRound(by: number) {
@@ -95,13 +134,13 @@ export class MainComponent implements OnInit {
   }
 
   loadPlayers() {
-    this.playerList = this.service.getRobinNames().filter(r => r.table);
+    const all = this.service.ensureSitOutPlayer(this.service.getRobinNames());
+    this.playerList = this.service.getDrawPlayers(all);
     this.playerNames = {};
     this.playerList.forEach(element => {
       this.playerNames[element.id] = element;
     });
     this.playersCount = this.playerList.length;
-
   }
 
   onSwipeLeft(event: any) {

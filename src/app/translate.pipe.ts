@@ -31,6 +31,12 @@ export class TranslatePipe implements PipeTransform {
     this.dct['save']  = ['Save', 'Uložiť'];
     this.dct['delete'] = ['Delete', 'Zmazať'];
     this.dct['newPlayer'] = ['New player', 'Nový hráč'];
+    this.dct['sitOut'] = ['Sit out', 'Voľno'];
+    this.dct['playingTonight'] = ['Playing tonight', 'Dnes hrá'];
+    this.dct['clubRoster'] = ['Club roster', 'Ostatní v klube'];
+    this.dct['notPlayingTonight'] = ['Not playing tonight', 'Dnes nehrá'];
+    this.dct['promoteTonight'] = ['Add to tonight', 'Dnes hrá'];
+    this.dct['emptySlot'] = ['Empty slot', 'Voľné miesto'];
 
     //    this.dct. = ['', ''];
 

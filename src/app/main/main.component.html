@@ -33,19 +33,30 @@
 <span class="spacer"></span>
 </mat-toolbar-row> -->
 </mat-toolbar>
+@if (warningMessage) {
+  <div class="warning-banner">{{ warningMessage }}</div>
+}
 <mat-card appearance="outlined" (swipeleft)="onSwipeLeft($event)" (swiperight)="onSwipeRight($event)" class="main-card">
 
   <div [formGroup]="form">
-    @for (item of roundData; track item; let i = $index) {
+    @for (item of roundData; track item[0] + '-' + item[1]; let i = $index) {
     <div [ngClass]="{'even': i % 2}" class="row" >
       <div class="mat-card-subtitle noselect">{{i+1}}</div>
       <div class="fx-row">
-        <div class="noselect mat-h2">
-          {{robin2Player[item[0]]?.name}}
+        <div class="noselect mat-h2 match-name">
+          @if (isSitOutPlayer(robin2Player[item[0]])) {
+            <mat-icon class="sit-out-icon" [attr.aria-label]="'sitOut' | translate">event_seat</mat-icon>
+          } @else {
+            {{robin2Player[item[0]]?.name}}
+          }
         </div>
         vs.
-        <div class="noselect mat-h2">
-          {{robin2Player[item[1]]?.name}}
+        <div class="noselect mat-h2 match-name">
+          @if (isSitOutPlayer(robin2Player[item[1]])) {
+            <mat-icon class="sit-out-icon" [attr.aria-label]="'sitOut' | translate">event_seat</mat-icon>
+          } @else {
+            {{robin2Player[item[1]]?.name}}
+          }
         </div>
       </div>
       <mat-divider>
