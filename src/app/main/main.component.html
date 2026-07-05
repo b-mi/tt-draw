@@ -1,32 +1,31 @@
-<mat-toolbar color="primary">
-  <mat-toolbar-row color="primary">
+<mat-toolbar class="tt-toolbar">
+  <mat-toolbar-row>
     <div>
-      <!-- {{version}} -->
-      <button mat-mini-fab color="accent" [routerLink]="[ '/players' ]"
-        matTooltip="{{'selectPlayers' | translate}}"><mat-icon>person_add_alt</mat-icon></button>
-      <!-- <span class="mat-h3">
-    {{playersCount}}</span> -->
+      <button mat-icon-button class="tt-chip tt-chip-active" [routerLink]="[ '/players' ]"
+        matTooltip="{{'selectPlayers' | translate}}">
+        <mat-icon>person_add_alt</mat-icon>
+      </button>
     </div>
     <span class="spacer"></span>
-    <div class="fx-row">
-      <mat-slide-toggle matTooltip="Farebná téma" (change)="themeService.setDark($event.checked)"
-        [checked]="themeService.isDark()"></mat-slide-toggle>
+    <div class="tt-toolbar-actions">
+      <button type="button" class="tt-theme-btn" (click)="themeService.toggle()"
+        matTooltip="Farebná téma" aria-label="Farebná téma">
+        @if (themeService.isDark()) {
+          <mat-icon>light_mode</mat-icon>
+        } @else {
+          <mat-icon>dark_mode</mat-icon>
+        }
+      </button>
 
       <button mat-icon-button (click)="setRound(-1)" [disabled]="round<1" aria-label="next"
         matTooltip="{{'back' | translate}}">
         <mat-icon>arrow_back</mat-icon>
       </button>
-      <span class="mat-h3">
-        <span class="mat-h3">
-          {{round+1}}
-        </span>
-        / {{roundsCount}}
-      </span>
+      <span class="tt-round-nav">{{round+1}} / {{roundsCount}}</span>
       <button mat-icon-button (click)="setRound(1)" [disabled]="round>roundsCount-2" aria-label="predošlé kolo"
         matTooltip="{{'forward' | translate}}">
         <mat-icon>arrow_forward</mat-icon>
       </button>
-
     </div>
   </mat-toolbar-row>
   <!-- <mat-toolbar-row>
@@ -41,8 +40,8 @@
   <div [formGroup]="form">
     @for (item of roundData; track item[0] + '-' + item[1]; let i = $index) {
     <div [ngClass]="{'even': i % 2}" class="row" >
-      <div class="mat-card-subtitle noselect">{{i+1}}</div>
-      <div class="fx-row">
+      <div class="mat-card-subtitle noselect round-num">{{i+1}}</div>
+      <div class="fx-row match-row">
         <div class="noselect mat-h2 match-name">
           @if (isSitOutPlayer(robin2Player[item[0]])) {
             <mat-icon class="sit-out-icon" [attr.aria-label]="'sitOut' | translate">event_seat</mat-icon>
@@ -50,7 +49,7 @@
             {{robin2Player[item[0]]?.name}}
           }
         </div>
-        vs.
+        <span class="match-vs">vs.</span>
         <div class="noselect mat-h2 match-name">
           @if (isSitOutPlayer(robin2Player[item[1]])) {
             <mat-icon class="sit-out-icon" [attr.aria-label]="'sitOut' | translate">event_seat</mat-icon>

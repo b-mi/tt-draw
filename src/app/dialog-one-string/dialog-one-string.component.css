@@ -1,7 +1,3 @@
 mat-form-field {
-    width: 100%;
-}
-
-.bkg {
-    background-color: var(--secondary-background) !important;
+  width: 100%;
 }

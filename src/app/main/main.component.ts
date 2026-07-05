@@ -11,7 +11,6 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterModule } from '@angular/router';
 import { ThemeService } from '../theme.service';
-import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatButtonModule } from '@angular/material/button';
 import { VERSION } from '../../version';
 import { RobinPlayer } from '../player.model';
@@ -22,7 +21,7 @@ import { RobinPlayer } from '../player.model';
   styleUrls: ['./main.component.css'],
   imports: [MatCardModule, FormsModule, MatFormFieldModule, MatDividerModule,
     ReactiveFormsModule, NgClass, MatTooltipModule, TranslatePipe,
-    MatIconModule, MatToolbarModule, RouterModule, MatSlideToggleModule,
+    MatIconModule, MatToolbarModule, RouterModule,
     MatButtonModule
   ]
 })

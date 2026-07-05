@@ -1,26 +1,45 @@
-import { Injectable, effect, signal } from '@angular/core';
+import { Injectable, effect, signal, Inject } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
-import { Inject } from '@angular/core';
 
 const STORAGE_KEY = 'isDarkTheme';
 
+function readDarkThemePreference(): boolean {
+  try {
+    const stored = localStorage.getItem(STORAGE_KEY);
+    if (stored === null) {
+      return false;
+    }
+    if (stored === 'true') {
+      return true;
+    }
+    if (stored === 'false') {
+      return false;
+    }
+    return JSON.parse(stored) === true;
+  } catch {
+    return false;
+  }
+}
+
+function applyTheme(doc: Document, isDark: boolean): void {
+  doc.documentElement.dataset['theme'] = isDark ? 'dark' : 'light';
+}
+
 @Injectable({ providedIn: 'root' })
 export class ThemeService {
-  private isDarkSignal = signal<boolean>(false);
+  private isDarkSignal = signal(readDarkThemePreference());
 
   constructor(@Inject(DOCUMENT) private document: Document) {
+    applyTheme(this.document, this.isDarkSignal());
+
     effect(() => {
       const isDark = this.isDarkSignal();
-      this.document.body.classList.toggle('dark-mode', isDark);
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(isDark));
+      applyTheme(this.document, isDark);
+      localStorage.setItem(STORAGE_KEY, isDark ? 'true' : 'false');
     });
-
-    const stored = localStorage.getItem(STORAGE_KEY);
-    const isDark = stored === 'true';
-    this.isDarkSignal.set(isDark);
   }
 
-  isDark = () => this.isDarkSignal(); // getter pre binding
+  isDark = () => this.isDarkSignal();
 
   setDark(value: boolean): void {
     this.isDarkSignal.set(value);

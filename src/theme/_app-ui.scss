@@ -1,0 +1,107 @@
+.tt-toolbar.mat-mdc-toolbar,
+.tt-toolbar {
+    background-color: var(--tt-toolbar-bg);
+    color: var(--tt-toolbar-fg);
+    border-bottom: 1px solid var(--tt-toolbar-border);
+    gap: 8px;
+}
+
+.tt-toolbar .tt-chip {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border: 1px solid var(--tt-chip-border);
+    border-radius: var(--tt-radius-sm);
+    background: var(--tt-chip-bg);
+    color: var(--tt-chip-fg);
+    flex-shrink: 0;
+}
+
+.tt-toolbar .tt-chip .mat-icon {
+    color: inherit;
+}
+
+.tt-toolbar .tt-chip.tt-chip-active {
+    background: var(--tt-chip-active-bg);
+    border-color: var(--tt-chip-active-border);
+    color: var(--tt-chip-active-fg);
+}
+
+.tt-toolbar .mat-mdc-icon-button:not(.tt-chip) {
+    --mat-icon-button-icon-color: var(--tt-toolbar-fg);
+    --mat-icon-button-disabled-icon-color: var(--tt-toolbar-muted);
+    color: var(--tt-toolbar-fg);
+}
+
+.tt-toolbar .mat-mdc-icon-button:not(.tt-chip):disabled {
+    opacity: 0.45;
+}
+
+.tt-toolbar .mat-mdc-icon-button:not(.tt-chip) .mat-icon {
+    color: inherit;
+}
+
+.tt-round-nav {
+    color: var(--tt-toolbar-fg);
+    font-weight: 600;
+    min-width: 3.5rem;
+    text-align: center;
+    letter-spacing: 0.02em;
+}
+
+.tt-toolbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.tt-toolbar-table-group {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.tt-theme-btn {
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    border: 1px solid var(--tt-theme-btn-border);
+    border-radius: 50%;
+    background: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: var(--tt-theme-btn-icon);
+    transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.tt-theme-btn .mat-icon {
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+    color: inherit;
+}
+
+.tt-theme-btn:focus-visible {
+    outline: 2px solid var(--tt-brand);
+    outline-offset: 2px;
+}
+
+.mat-mdc-outlined-card {
+    border-radius: var(--tt-radius-lg);
+    border-color: var(--tt-border);
+    background: var(--tt-surface);
+    color: var(--tt-text);
+}
+
+.mat-mdc-dialog-container .mdc-dialog__surface {
+    border-radius: var(--tt-radius-lg);
+    background: var(--tt-surface-2);
+    color: var(--tt-text);
+}
+
+.mat-mdc-form-field {
+    color: var(--tt-text);
+}
