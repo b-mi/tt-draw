@@ -52,21 +52,24 @@ export class AppService {
 
   getRobinNames(): any[] {
     // return BASE_ROBIN_NAMES; // reset
-    const json = localStorage.getItem('robin-names');
-    var a = 1;
-    if (json) {
-      const data = (JSON.parse(json) as any[]);
-      return data;
-    } else {
-      return BASE_ROBIN_NAMES;
+    try {
+      const json = localStorage.getItem('robin-names');
+      if (json) {
+        return JSON.parse(json) as any[];
+      }
+    } catch (e) {
+      console.error('Error parsing robin-names from localStorage', e);
     }
+    return BASE_ROBIN_NAMES;
   }
 
   saveRobinNames(data: any[]) {
-    const json = JSON.stringify(data);
-    localStorage.setItem('robin-names', json);
-    const val = localStorage.getItem('robin-names');
-    // this.showMessage('Uložené')
+    try {
+      const json = JSON.stringify(data);
+      localStorage.setItem('robin-names', json);
+    } catch (e) {
+      console.error('Error saving robin-names to localStorage', e);
+    }
   }
 
   // async ttGetAccs(): any[] {
