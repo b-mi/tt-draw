@@ -1,8 +1,8 @@
 {
   "name": "TT-Draw",
   "short_name": "TT-Draw",
-  "theme_color": "#1976d2",
-  "background_color": "#fafafa",
+  "theme_color": "#2f6b44",
+  "background_color": "#f7faf2",
   "display": "standalone",
   "scope": "/tt-draw/",
   "start_url": "/tt-draw/",
