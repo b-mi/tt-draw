@@ -46,7 +46,7 @@
           @if (isSitOutPlayer(robin2Player[item[0]])) {
             <mat-icon class="sit-out-icon" [attr.aria-label]="'sitOut' | translate">event_seat</mat-icon>
           } @else {
-            {{robin2Player[item[0]]?.name}}
+            {{robin2Player[item[0]].name}}
           }
         </div>
         <span class="match-vs">vs.</span>
@@ -54,7 +54,7 @@
           @if (isSitOutPlayer(robin2Player[item[1]])) {
             <mat-icon class="sit-out-icon" [attr.aria-label]="'sitOut' | translate">event_seat</mat-icon>
           } @else {
-            {{robin2Player[item[1]]?.name}}
+            {{robin2Player[item[1]].name}}
           }
         </div>
       </div>
