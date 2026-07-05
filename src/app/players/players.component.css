@@ -127,17 +127,38 @@
 }
 
 .zone-splitter {
-  flex: 0 0 6px;
+  flex: 0 0 14px;
   cursor: row-resize;
   touch-action: none;
-  background: var(--tt-border);
+  background: var(--tt-surface-2);
+  border-top: 1px solid var(--tt-border);
+  border-bottom: 1px solid var(--tt-border);
   transition: background-color 0.15s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .zone-splitter:hover,
 .zone-splitter:active {
-  background: var(--tt-text-muted);
+  background: var(--tt-surface-3);
 }
+
+.zone-splitter-thumb {
+  width: 48px;
+  height: 4px;
+  border-radius: var(--tt-radius-sm);
+  background-color: var(--tt-text-muted);
+  opacity: 0.5;
+  transition: opacity 0.15s ease, background-color 0.15s ease;
+}
+
+.zone-splitter:hover .zone-splitter-thumb,
+.zone-splitter:active .zone-splitter-thumb {
+  opacity: 1;
+  background-color: var(--tt-brand);
+}
+
 
 .zone-title {
   margin: 10px 14px 6px;

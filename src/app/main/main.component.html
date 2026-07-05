@@ -42,7 +42,7 @@
     <div [ngClass]="{'even': i % 2}" class="row" >
       <div class="mat-card-subtitle noselect round-num">{{i+1}}</div>
       <div class="fx-row match-row">
-        <div class="noselect mat-h2 match-name">
+        <div class="noselect mat-h2 match-name player-name-large">
           @if (isSitOutPlayer(robin2Player[item[0]])) {
             <mat-icon class="sit-out-icon" [attr.aria-label]="'sitOut' | translate">event_seat</mat-icon>
           } @else {
@@ -50,7 +50,7 @@
           }
         </div>
         <span class="match-vs">vs.</span>
-        <div class="noselect mat-h2 match-name">
+        <div class="noselect mat-h2 match-name player-name-large">
           @if (isSitOutPlayer(robin2Player[item[1]])) {
             <mat-icon class="sit-out-icon" [attr.aria-label]="'sitOut' | translate">event_seat</mat-icon>
           } @else {

@@ -56,7 +56,7 @@
               <path d="M0 0h24v24H0z" fill="none"></path>
             </svg>
           </div>
-          <div class="player-name">
+          <div class="player-name player-name-large">
             @if (isSitOut(player)) {
               <mat-icon class="sit-out-icon" [matTooltip]="'sitOut' | translate">event_seat</mat-icon>
             } @else {
@@ -106,6 +106,7 @@
     aria-label="Resize player lists"
     (mousedown)="startPaneResize($event)"
     (touchstart)="startPaneResize($event)">
+    <div class="zone-splitter-thumb"></div>
   </div>
 
   <section class="zone zone-others">
@@ -115,7 +116,7 @@
         <div class="fx-row drag-item reserve-row" [ngClass]="{'sit-out-row': isSitOut(player)}">
           <div class="noTablePlayer"></div>
           <div class="example-handle example-handle-spacer" aria-hidden="true"></div>
-          <div class="player-name">
+          <div class="player-name player-name-large">
             @if (isSitOut(player)) {
               <mat-icon class="sit-out-icon" [matTooltip]="'sitOut' | translate">event_seat</mat-icon>
             } @else {
