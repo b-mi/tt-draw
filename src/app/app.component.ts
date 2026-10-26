@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { AppService } from './app.service';
 import { RouterModule } from '@angular/router';
 import { PromptUpdateService } from './prompt-update.service';
@@ -9,6 +9,7 @@ import { ThemeService } from './theme.service';
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css'],
     imports: [RouterModule],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: true
 })
 export class AppComponent implements OnInit {
@@ -23,13 +24,5 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-  }
-
-  onSwipeLeft() {
-    console.log('Swipe doľava');
-  }
-
-  onSwipeRight() {
-    console.log('Swipe doprava');
   }
 }

@@ -1,5 +1,5 @@
-import { Injectable, effect, signal, Inject } from '@angular/core';
-import { DOCUMENT } from '@angular/common';
+import { Injectable, effect, signal, Inject, DOCUMENT } from '@angular/core';
+
 
 const STORAGE_KEY = 'isDarkTheme';
 

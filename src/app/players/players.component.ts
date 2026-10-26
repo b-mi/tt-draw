@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { AppService } from '../app.service';
 import { Observable } from 'rxjs';
@@ -23,6 +23,7 @@ import { RobinPlayer } from '../player.model';
   selector: 'app-players',
   templateUrl: './players.component.html',
   styleUrls: ['./players.component.css'],
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [MatToolbarModule, MatIconModule, RouterModule, MatTooltipModule,
     TranslatePipe, NgClass, MatMenuModule, MatDividerModule, MatButtonModule,
     DragDropModule

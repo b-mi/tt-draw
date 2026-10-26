@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { UntypedFormGroup, UntypedFormBuilder, UntypedFormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppService } from '../app.service';
 import { MatCardModule } from '@angular/material/card';
@@ -14,15 +14,18 @@ import { ThemeService } from '../theme.service';
 import { MatButtonModule } from '@angular/material/button';
 import { VERSION } from '../../version';
 import { RobinPlayer } from '../player.model';
+import { SwipeHorizontalDirective } from '../swipe-horizontal.directive';
 
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.css'],
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [MatCardModule, FormsModule, MatFormFieldModule, MatDividerModule,
     ReactiveFormsModule, NgClass, MatTooltipModule, TranslatePipe,
     MatIconModule, MatToolbarModule, RouterModule,
-    MatButtonModule
+    MatButtonModule,
+    SwipeHorizontalDirective,
   ]
 })
 export class MainComponent implements OnInit {
@@ -142,20 +145,16 @@ export class MainComponent implements OnInit {
     this.playersCount = this.playerList.length;
   }
 
-  onSwipeLeft(event: any) {
-    console.log('left');
-
+  onSwipeLeft(): void {
     if (this.round < this.roundsCount - 1) {
-      this.setRound(1)
+      this.setRound(1);
     }
   }
 
-  onSwipeRight(event: any) {
-    console.log('right');
+  onSwipeRight(): void {
     if (this.round > 0) {
-      this.setRound(-1)
+      this.setRound(-1);
     }
-
   }
 
 

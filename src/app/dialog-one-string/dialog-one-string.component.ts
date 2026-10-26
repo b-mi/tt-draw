@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, Inject, ChangeDetectionStrategy } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA, MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -11,6 +11,7 @@ import {MatInputModule} from '@angular/material/input';
 @Component({
   templateUrl: './dialog-one-string.component.html',
   styleUrls: ['./dialog-one-string.component.css'],
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [MatCardModule, MatFormFieldModule, TranslatePipe, FormsModule,
     MatIconModule, MatDialogModule, MatButtonModule, MatInputModule
   ]

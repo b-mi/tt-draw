@@ -6,18 +6,37 @@ mat-form-field {
   width: 45%;
 }
 
+:host {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  min-height: 100%;
+  box-sizing: border-box;
+}
+
 mat-card {
   padding-left: 0;
   padding-right: 0;
 }
 
 .main-card {
+  position: relative;
+  flex: 1 1 auto;
   margin: var(--tt-content-gap);
+  min-height: calc(100vh - 60px - 2 * var(--tt-content-gap));
   height: calc(100% - 60px - 2 * var(--tt-content-gap));
   overflow: hidden;
+  box-sizing: border-box;
   box-shadow: none;
   background: var(--tt-surface);
   color: var(--tt-text);
+}
+
+.main-card-swipe {
+  position: absolute;
+  inset: 0;
+  overflow: auto;
+  touch-action: pan-y;
 }
 
 .warning-banner {

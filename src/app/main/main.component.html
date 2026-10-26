@@ -35,8 +35,12 @@
 @if (warningMessage) {
   <div class="warning-banner">{{ warningMessage }}</div>
 }
-<mat-card appearance="outlined" (swipeleft)="onSwipeLeft($event)" (swiperight)="onSwipeRight($event)" class="main-card">
-
+<mat-card appearance="outlined" class="main-card">
+  <div
+    class="main-card-swipe"
+    appSwipeHorizontal
+    (swipeLeft)="onSwipeLeft()"
+    (swipeRight)="onSwipeRight()">
   <div [formGroup]="form">
     @for (item of roundData; track item[0] + '-' + item[1]; let i = $index) {
     <div [ngClass]="{'even': i % 2}" class="row" >
@@ -62,6 +66,7 @@
       </mat-divider>
     </div>
     }
+  </div>
   </div>
 </mat-card>
 
